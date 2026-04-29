@@ -2,6 +2,7 @@ import { useState } from 'react'
 import './App.css'
 import Login from './paginas/login'
 import Cadastro from './paginas/cadastro'
+import Usuarios from './paginas/usuarios'
 
 function App() {
 const [tela, setTela] = useState('login')
@@ -15,7 +16,11 @@ const trocardeTela = (pagina) => {
       return <Login/>
     }else if(tela === 'cadastro'){ 
       return <Cadastro/>
-    } else{
+    } 
+    else if(tela === 'usuarios'){
+      return <Usuarios/>
+    }
+    else {
       return <Login/>
     }
 
@@ -25,6 +30,7 @@ const trocardeTela = (pagina) => {
     <>
      <button onClick= {()=>trocardeTela('cadastro')}>Cadastro</button>
      <button onClick= {()=>trocardeTela('login')}>Login</button>
+     <button onClick= {()=>trocardeTela('usuarios')}>Usuarios</button>
      <hr />
      {redenrizar()}
      </>
